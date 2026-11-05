@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px;font-family:system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>水槽泵对厂议案</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<style>
+/* Layout: 单栏技术议案，左对齐；图纸式线稿，橙色=本次新增或改动，灰色=现款保留 */
+:root{
+  --paper:#F5F6F3; --card:#FFFFFF; --ink:#1C2326; --muted:#5B676D; --line:#CDD3D4;
+  --new:#C2561C; --new-soft:#F6E3D7; --keep:#7A8890; --keep-soft:#E6EAEB;
+  --water:#3B84AD; --water-soft:#D5E7F1; --warn:#9A6A12; --warn-soft:#F3E8CF; --ok:#3E7D4F; --ok-soft:#DCEBDF;
+  --basin-black:#2A2E31; --g1:#CBD0CC; --g2:#9DA3A6; --g3:#C5BFAD; --part-black:#202426;
+  --f-display:"Noto Serif SC","Songti SC",Georgia,serif;
+  --f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#15191B; --card:#1D2326; --ink:#E6EAEB; --muted:#9AA6AB; --line:#343D41;
+  --new:#E8834B; --new-soft:#3A2619; --keep:#8C9AA2; --keep-soft:#283034;
+  --water:#6AAFD6; --water-soft:#1C3442; --warn:#D9A84A; --warn-soft:#352B16; --ok:#79BB89; --ok-soft:#1D3123;
+  --basin-black:#0E1011; --part-black:#0B0D0E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#15191B; --card:#1D2326; --ink:#E6EAEB; --muted:#9AA6AB; --line:#343D41;
+  --new:#E8834B; --new-soft:#3A2619; --keep:#8C9AA2; --keep-soft:#283034;
+  --water:#6AAFD6; --water-soft:#1C3442; --warn:#D9A84A; --warn-soft:#352B16; --ok:#79BB89; --ok-soft:#1D3123;
+  --basin-black:#0E1011; --part-black:#0B0D0E; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.7}
+.wrap{max-width:1040px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:48px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:30px}
+h2{font-size:23px}
+h3{font-size:16px;font-family:var(--f-body);font-weight:700}
+p{margin:0;max-width:70ch}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:16px}
+.sub{display:flex;flex-direction:column;gap:14px}
+.part{display:flex;align-items:baseline;gap:12px;border-top:2px solid var(--ink);padding-top:14px}
+.part .num{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.head{display:flex;flex-direction:column;gap:12px;border-bottom:1px solid var(--line);padding-bottom:24px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.box ul,.box ol{margin:0;padding-left:1.2em}
+.box li{margin:2px 0}
+.core{border-color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--muted);align-items:center}
+.sw{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.panel.pick{border-color:var(--new);box-shadow:inset 0 0 0 1px var(--new)}
+.panel .cap{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.panel ol{margin:0;padding-left:1.3em;font-size:13px;color:var(--muted)}
+.fig{overflow-x:auto}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:var(--f-body);fill:var(--ink)}
+svg .t-muted{fill:var(--muted)}
+svg .t-new{fill:var(--new)}
+svg .t-mono{font-family:var(--f-mono)}
+.s-keep{fill:var(--keep-soft);stroke:var(--keep);stroke-width:1.5}
+.s-keepdark{fill:var(--keep);stroke:var(--keep);stroke-width:1.5}
+.s-new{fill:var(--new-soft);stroke:var(--new);stroke-width:2}
+.s-clear{fill:var(--card);stroke:var(--new);stroke-width:2}
+.s-line{fill:none;stroke:var(--keep);stroke-width:1.5}
+.s-newline{fill:none;stroke:var(--new);stroke-width:2}
+.s-dash{fill:none;stroke:var(--muted);stroke-width:1.5;stroke-dasharray:5 4}
+.s-water{fill:var(--water-soft);stroke:none}
+.s-waterline{fill:none;stroke:var(--water);stroke-width:1.5}
+.s-thread{fill:none;stroke:var(--ink);stroke-width:1}
+.s-lead{fill:none;stroke:var(--muted);stroke-width:1}
+.s-dim{fill:none;stroke:var(--ink);stroke-width:1}
+.s-floor{fill:none;stroke:var(--ink);stroke-width:1.5}
+.s-ink{fill:var(--ink)}
+.s-clamp{fill:var(--keep);stroke:none}
+.chip{display:inline-block;font-size:12px;line-height:1.4;padding:2px 8px;border-radius:999px;white-space:nowrap;font-weight:500}
+.c-new{background:var(--new-soft);color:var(--new)}
+.c-keep{background:var(--keep-soft);color:var(--muted)}
+.c-pick{background:var(--warn-soft);color:var(--warn)}
+.c-ok{background:var(--ok-soft);color:var(--ok)}
+.c-core{background:var(--ink);color:var(--paper)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:860px;font-size:13.5px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-weight:700;font-size:12.5px;color:var(--muted);background:var(--paper)}
+tr:last-child td{border-bottom:none}
+tr.hl td{background:color-mix(in srgb,var(--warn-soft) 55%,transparent)}
+td ul{margin:0;padding-left:1.1em}
+td li{margin:1px 0}
+.no{font-family:var(--f-mono);color:var(--muted);white-space:nowrap}
+.narrow table{min-width:620px}
+.note{font-size:13px;color:var(--muted)}
+.warnbox{background:var(--warn-soft);border:1px solid var(--line);border-radius:6px;padding:14px 18px;display:flex;flex-direction:column;gap:6px}
+.src{font-size:12.5px;color:var(--muted)}
+.src ol{margin:0;padding-left:1.3em}
+.src a{color:inherit}
+.two{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.swatch{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--card)}
+.swatch .chipc{height:64px}
+.swatch .lab{padding:8px 10px;font-size:12.5px;display:flex;flex-direction:column;gap:2px}
+.calc{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums}
+.calc td{padding:7px 12px}
+.calc td:last-child{text-align:right;white-space:nowrap}
+.calc tr.sum td{font-weight:500;border-top:2px solid var(--ink)}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<header class="head">
+  <div class="eyebrow">Utility Sink Pump · 对厂沟通议案 · 草案 v03</div>
+  <h1>水槽泵对厂议案</h1>
+  <p>基于水泵厂现款 6 gal 桶体系统（与 VEVOR ZX30023 同款）。核心是两项调整：<strong>出水调整</strong>和<strong>桶身、桶盖换色</strong>。上盖和桶体模具都不动。另有出厂预装与水测、盖子密封两项和厂家确认。</p>
+  <div class="meta"><span>日期：2026-11-05</span><span>状态：待内部确认，确认后转 Excel 发厂家</span><span>图示：示意，非比例</span></div>
+</header>
+
+<section>
+  <div class="grid3">
+    <div class="box core"><span class="chip c-core" style="align-self:flex-start">核心 ①</span><h3>出水调整</h3><p class="note">盖外随箱新增"短管 + 静音透明止回阀"组件；桶内出水管去掉内阀，改直管并开防气堵孔（方案 A）。</p></div>
+    <div class="box core"><span class="chip c-core" style="align-self:flex-start">核心 ②</span><h3>桶身、桶盖换灰色</h3><p class="note">原模具换色母，灰色桶身配黑色外露功能件。</p></div>
+    <div class="box"><span class="chip c-pick" style="align-self:flex-start">重点沟通</span><h3>出厂预装与水测</h3><p class="note">分三档和厂家谈，先摸清可行性和成本。</p></div>
+  </div>
+  <p class="note">本次不讨论：上盖结构、泵、桶底减振垫、洗衣场景配件、品牌包装与认证备案。进水口、排气口保持 1-1/2" NPT，不另配转接件。</p>
+</section>
+
+<!-- ============ 一、出水调整 ============ -->
+<section>
+  <div class="part"><span class="num">一</span><h2>出水调整</h2></div>
+
+  <div class="sub">
+    <h3>1.1 总览：现款与两个方案</h3>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--keep-soft);border:1px solid var(--keep)"></i>现款保留件</span>
+      <span><i class="sw" style="background:var(--new-soft);border:1px solid var(--new)"></i>本次新增或改动</span>
+      <span><i class="sw" style="border:1px dashed var(--muted)"></i>用户现场自备</span>
+      <span><i class="sw" style="background:var(--water-soft)"></i>积水</span>
+    </div>
+    <div class="panels">
+
+      <div class="panel">
+        <div class="cap"><h3>现款</h3><span class="chip c-keep">参照</span></div>
+        <div class="fig"><svg viewBox="0 0 280 400" role="img" aria-label="现款：桶内出水管带止回阀，盖子出水口为螺纹口，盖外管路由用户自备">
+          <line class="s-floor" x1="20" y1="378" x2="260" y2="378"/>
+          <path class="s-keep" d="M52 172 L62 376 L218 376 L228 172 Z"/>
+          <rect class="s-water" x="61" y="312" width="158" height="63"/>
+          <line class="s-waterline" x1="60" y1="312" x2="220" y2="312"/>
+          <rect class="s-keep" x="40" y="160" width="200" height="12" rx="2"/>
+          <path class="s-keep" d="M62 160 L72 140 L208 140 L218 160 Z"/>
+          <rect class="s-keep" x="218" y="144" width="14" height="14"/>
+          <rect class="s-keep" x="94" y="130" width="22" height="10"/>
+          <rect class="s-keep" x="148" y="128" width="24" height="12"/>
+          <line class="s-thread" x1="151" y1="131" x2="169" y2="131"/><line class="s-thread" x1="151" y1="134" x2="169" y2="134"/><line class="s-thread" x1="151" y1="137" x2="169" y2="137"/>
+          <rect class="s-keep" x="124" y="134" width="12" height="6"/>
+          <rect class="s-keepdark" x="72" y="292" width="48" height="66" rx="4"/>
+          <rect class="s-keepdark" x="68" y="356" width="112" height="18" rx="3"/>
+          <line class="s-line" x1="135" y1="200" x2="135" y2="330"/>
+          <rect class="s-keep" x="128" y="300" width="14" height="22" rx="3"/>
+          <rect class="s-keep" x="154" y="172" width="12" height="150"/>
+          <rect class="s-keepdark" x="150" y="318" width="20" height="38" rx="2"/>
+          <line style="stroke:var(--paper);stroke-width:1.5" x1="150" y1="326" x2="170" y2="326"/>
+          <line style="stroke:var(--paper);stroke-width:1.5" x1="150" y1="348" x2="170" y2="348"/>
+          <path class="s-dash" d="M154 128 L154 20 M166 128 L166 20"/>
+          <path class="s-dash" d="M99 130 L99 60 M111 130 L111 60"/>
+          <path class="s-dash" d="M232 147 L262 147 M232 155 L262 155"/>
+          <line class="s-lead" x1="172" y1="337" x2="200" y2="337"/>
+          <text x="203" y="333" font-size="11">内置</text><text x="203" y="346" font-size="11">止回阀</text>
+          <line class="s-lead" x1="172" y1="134" x2="200" y2="112"/>
+          <text x="186" y="104" font-size="11">出水口</text><text x="186" y="92" font-size="10" class="t-muted t-mono">1-1/2" FNPT</text>
+          <text x="172" y="40" font-size="11" class="t-muted">用户自备管</text>
+          <text x="60" y="52" font-size="11" class="t-muted">排气</text>
+          <text x="236" y="138" font-size="11" class="t-muted">进水</text>
+          <text x="78" y="330" font-size="11" style="fill:var(--card)">泵</text>
+        </svg></div>
+        <ol><li>止回阀在桶内、贴近泵出口，看不见、拆修要开盖</li><li>盖外出水管、接头全部由用户自备</li></ol>
+      </div>
+
+      <div class="panel pick">
+        <div class="cap"><h3>方案 A：去掉内阀</h3><span class="chip c-new">已定，按此沟通</span></div>
+        <div class="fig"><svg viewBox="0 0 280 400" role="img" aria-label="方案A：桶内出水管改直管，上部开防气堵孔，盖外拧入单端螺纹短管，接静音透明止回阀">
+          <line class="s-floor" x1="20" y1="378" x2="260" y2="378"/>
+          <path class="s-keep" d="M52 172 L62 376 L218 376 L228 172 Z"/>
+          <rect class="s-water" x="61" y="312" width="158" height="63"/>
+          <line class="s-waterline" x1="60" y1="312" x2="220" y2="312"/>
+          <rect class="s-keep" x="40" y="160" width="200" height="12" rx="2"/>
+          <path class="s-keep" d="M62 160 L72 140 L208 140 L218 160 Z"/>
+          <rect class="s-keep" x="218" y="144" width="14" height="14"/>
+          <rect class="s-keep" x="94" y="130" width="22" height="10"/>
+          <rect class="s-keep" x="148" y="128" width="24" height="12"/>
+          <rect class="s-keep" x="124" y="134" width="12" height="6"/>
+          <rect class="s-keepdark" x="72" y="292" width="48" height="66" rx="4"/>
+          <rect class="s-keepdark" x="68" y="356" width="112" height="18" rx="3"/>
+          <line class="s-line" x1="135" y1="200" x2="135" y2="330"/>
+          <rect class="s-keep" x="128" y="300" width="14" height="22" rx="3"/>
+          <rect class="s-new" x="154" y="172" width="12" height="184"/>
+          <circle cx="166" cy="196" r="2.6" class="s-ink"/>
+          <path class="s-waterline" d="M169 196 q12 2 20 14"/>
+          <rect class="s-new" x="154" y="110" width="12" height="28"/>
+          <line class="s-thread" x1="154" y1="130" x2="166" y2="130"/><line class="s-thread" x1="154" y1="134" x2="166" y2="134"/>
+          <rect class="s-new" x="150" y="92" width="20" height="22" rx="3"/>
+          <rect class="s-clamp" x="148" y="96" width="24" height="3" rx="1"/><rect class="s-clamp" x="148" y="107" width="24" height="3" rx="1"/>
+          <rect class="s-clear" x="144" y="44" width="32" height="50" rx="5"/>
+          <path class="s-newline" d="M151 82 L169 62"/>
+          <circle cx="151" cy="82" r="2" style="fill:var(--new)"/>
+          <rect class="s-new" x="150" y="24" width="20" height="22" rx="3"/>
+          <rect class="s-clamp" x="148" y="28" width="24" height="3" rx="1"/><rect class="s-clamp" x="148" y="39" width="24" height="3" rx="1"/>
+          <path class="s-dash" d="M154 24 L154 2 M166 24 L166 2"/>
+          <path class="s-dash" d="M99 130 L99 60 M111 130 L111 60"/>
+          <path class="s-dash" d="M232 147 L262 147 M232 155 L262 155"/>
+          <line class="s-lead" x1="178" y1="66" x2="196" y2="66"/><text x="199" y="62" font-size="11" class="t-new">静音透明</text><text x="199" y="75" font-size="11" class="t-new">止回阀</text>
+          <line class="s-lead" x1="168" y1="124" x2="196" y2="124"/><text x="199" y="128" font-size="11" class="t-new">螺纹短管</text>
+          <line class="s-lead" x1="168" y1="270" x2="196" y2="270"/><text x="199" y="267" font-size="11" class="t-new">直管</text><text x="199" y="280" font-size="11" class="t-new">（去掉内阀）</text>
+          <line class="s-lead" x1="190" y1="210" x2="200" y2="226"/><text x="190" y="238" font-size="11" class="t-new">防气堵孔</text><text x="190" y="251" font-size="10" class="t-muted">在管上部</text>
+          <text x="60" y="52" font-size="11" class="t-muted">排气</text>
+          <text x="236" y="138" font-size="11" class="t-muted">进水</text>
+          <text x="78" y="330" font-size="11" style="fill:var(--card)">泵</text>
+        </svg></div>
+        <ol><li>全系统只有一个止回阀，装在盖外，可看可拆</li><li>防气堵孔开在桶内直管上部，需样机验证</li></ol>
+      </div>
+
+      <div class="panel">
+        <div class="cap"><h3>方案 B：保留内阀</h3><span class="chip c-pick">备选</span></div>
+        <div class="fig"><svg viewBox="0 0 280 400" role="img" aria-label="方案B：桶内出水管与内置止回阀保持现款，盖外同样加装静音透明止回阀组件">
+          <line class="s-floor" x1="20" y1="378" x2="260" y2="378"/>
+          <path class="s-keep" d="M52 172 L62 376 L218 376 L228 172 Z"/>
+          <rect class="s-water" x="61" y="312" width="158" height="63"/>
+          <line class="s-waterline" x1="60" y1="312" x2="220" y2="312"/>
+          <rect class="s-keep" x="40" y="160" width="200" height="12" rx="2"/>
+          <path class="s-keep" d="M62 160 L72 140 L208 140 L218 160 Z"/>
+          <rect class="s-keep" x="218" y="144" width="14" height="14"/>
+          <rect class="s-keep" x="94" y="130" width="22" height="10"/>
+          <rect class="s-keep" x="148" y="128" width="24" height="12"/>
+          <rect class="s-keep" x="124" y="134" width="12" height="6"/>
+          <rect class="s-keepdark" x="72" y="292" width="48" height="66" rx="4"/>
+          <rect class="s-keepdark" x="68" y="356" width="112" height="18" rx="3"/>
+          <line class="s-line" x1="135" y1="200" x2="135" y2="330"/>
+          <rect class="s-keep" x="128" y="300" width="14" height="22" rx="3"/>
+          <rect class="s-keep" x="154" y="172" width="12" height="150"/>
+          <rect class="s-keepdark" x="150" y="318" width="20" height="38" rx="2"/>
+          <line style="stroke:var(--paper);stroke-width:1.5" x1="150" y1="326" x2="170" y2="326"/>
+          <line style="stroke:var(--paper);stroke-width:1.5" x1="150" y1="348" x2="170" y2="348"/>
+          <rect class="s-new" x="154" y="110" width="12" height="28"/>
+          <line class="s-thread" x1="154" y1="130" x2="166" y2="130"/><line class="s-thread" x1="154" y1="134" x2="166" y2="134"/>
+          <rect class="s-new" x="150" y="92" width="20" height="22" rx="3"/>
+          <rect class="s-clamp" x="148" y="96" width="24" height="3" rx="1"/><rect class="s-clamp" x="148" y="107" width="24" height="3" rx="1"/>
+          <rect class="s-clear" x="144" y="44" width="32" height="50" rx="5"/>
+          <path class="s-newline" d="M151 82 L169 62"/>
+          <circle cx="151" cy="82" r="2" style="fill:var(--new)"/>
+          <rect class="s-new" x="150" y="24" width="20" height="22" rx="3"/>
+          <rect class="s-clamp" x="148" y="28" width="24" height="3" rx="1"/><rect class="s-clamp" x="148" y="39" width="24" height="3" rx="1"/>
+          <path class="s-dash" d="M154 24 L154 2 M166 24 L166 2"/>
+          <path class="s-dash" d="M99 130 L99 60 M111 130 L111 60"/>
+          <path class="s-dash" d="M232 147 L262 147 M232 155 L262 155"/>
+          <line class="s-lead" x1="178" y1="66" x2="196" y2="66"/><text x="199" y="62" font-size="11" class="t-new">静音透明</text><text x="199" y="75" font-size="11" class="t-new">止回阀</text>
+          <line class="s-lead" x1="168" y1="124" x2="196" y2="124"/><text x="199" y="128" font-size="11" class="t-new">螺纹短管</text>
+          <line class="s-lead" x1="172" y1="337" x2="200" y2="337"/><text x="203" y="333" font-size="11">内阀</text><text x="203" y="346" font-size="11">保持现款</text>
+          <text x="60" y="52" font-size="11" class="t-muted">排气</text>
+          <text x="236" y="138" font-size="11" class="t-muted">进水</text>
+          <text x="78" y="330" font-size="11" style="fill:var(--card)">泵</text>
+        </svg></div>
+        <ol><li>桶内零改动，两个止回阀串联</li><li>内阀开胶、失效会被外阀掩盖，需厂家确认内阀工艺</li></ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>1.2 盖外出水组件与短管长度</h3>
+    <div class="two">
+      <div class="box fig" style="padding:12px">
+        <svg viewBox="0 0 440 560" role="img" aria-label="盖外出水组件与尺寸：盖子出水口、3英寸单端螺纹短管、PumpSpy式止回阀总长8又3/8英寸、管端间隙5又1/8英寸，组件顶部距出水口顶面约9英寸">
+          <!-- lid -->
+          <path class="s-keep" d="M30 540 L50 512 L250 512 L270 540 Z"/>
+          <rect class="s-keep" x="118" y="490" width="64" height="24"/>
+          <line class="s-thread" x1="122" y1="496" x2="178" y2="496"/><line class="s-thread" x1="122" y1="502" x2="178" y2="502"/><line class="s-thread" x1="122" y1="508" x2="178" y2="508"/>
+          <!-- nipple: thread part hidden in port 490-514, exposed 474-490, inside coupling 432-474 -->
+          <rect class="s-new" x="130" y="432" width="40" height="82" rx="1"/>
+          <line class="s-thread" x1="130" y1="494" x2="170" y2="494"/><line class="s-thread" x1="130" y1="500" x2="170" y2="500"/><line class="s-thread" x1="130" y1="506" x2="170" y2="506"/>
+          <!-- lower coupling 432-474 -->
+          <rect class="s-new" x="122" y="420" width="56" height="54" rx="5" style="fill-opacity:.85"/>
+          <rect class="s-clamp" x="117" y="460" width="66" height="7" rx="2"/>
+          <rect class="s-clamp" x="117" y="427" width="66" height="7" rx="2"/>
+          <!-- valve body -->
+          <path class="s-clear" d="M130 420 L104 392 L104 290 L196 290 L196 392 L170 420 Z"/>
+          <line class="s-lead" x1="118" y1="300" x2="118" y2="384"/><line class="s-lead" x1="134" y1="300" x2="134" y2="384"/><line class="s-lead" x1="166" y1="300" x2="166" y2="384"/><line class="s-lead" x1="182" y1="300" x2="182" y2="384"/>
+          <path style="fill:var(--water)" d="M150 316 l-7 12 h5 v34 h4 v-34 h5 z"/>
+          <path class="s-clear" d="M104 290 L130 262 L170 262 L196 290 Z"/>
+          <!-- upper coupling 208-262 -->
+          <rect class="s-new" x="122" y="208" width="56" height="54" rx="5" style="fill-opacity:.85"/>
+          <rect class="s-clamp" x="117" y="215" width="66" height="7" rx="2"/>
+          <rect class="s-clamp" x="117" y="248" width="66" height="7" rx="2"/>
+          <!-- user pipe -->
+          <path class="s-dash" d="M130 250 L130 150 M170 250 L170 150"/>
+          <!-- dims: overall 8-3/8 from 208 to 474 -->
+          <line class="s-dim" x1="70" y1="208" x2="70" y2="474"/><line class="s-dim" x1="62" y1="208" x2="78" y2="208"/><line class="s-dim" x1="62" y1="474" x2="78" y2="474"/>
+          <text x="20" y="336" font-size="12" class="t-mono">8-3/8"</text><text x="16" y="352" font-size="10.5" class="t-muted">阀组总长</text>
+          <!-- gap 5-1/8 between pipe ends: from 250 (user pipe end) to 432 (nipple end) -->
+          <line class="s-dim" x1="226" y1="250" x2="226" y2="432"/><line class="s-dim" x1="218" y1="250" x2="234" y2="250"/><line class="s-dim" x1="218" y1="432" x2="234" y2="432"/>
+          <text x="238" y="338" font-size="12" class="t-mono">5-1/8"</text><text x="238" y="354" font-size="10.5" class="t-muted">两管端间隙</text>
+          <!-- insertion 1-5/8 lower: 432-474 -->
+          <line class="s-dim" x1="206" y1="432" x2="206" y2="474"/><line class="s-dim" x1="200" y1="474" x2="212" y2="474"/>
+          <text x="238" y="452" font-size="12" class="t-mono">≈1-5/8"</text><text x="238" y="467" font-size="10.5" class="t-muted">短管插入接头</text>
+          <line class="s-lead" x1="212" y1="453" x2="234" y2="449"/>
+          <!-- nipple length 3": 432-514 -->
+          <line class="s-dim" x1="312" y1="432" x2="312" y2="514"/><line class="s-dim" x1="304" y1="432" x2="320" y2="432"/><line class="s-dim" x1="304" y1="514" x2="320" y2="514"/>
+          <text x="324" y="470" font-size="12.5" class="t-new t-mono">短管 3"</text><text x="324" y="486" font-size="10.5" class="t-muted">76 mm，建议值</text>
+          <!-- total above port top 490 -> 208 -->
+          <line class="s-dim" x1="400" y1="208" x2="400" y2="490"/><line class="s-dim" x1="392" y1="208" x2="408" y2="208"/><line class="s-dim" x1="392" y1="490" x2="408" y2="490"/>
+          <text x="342" y="194" font-size="12" class="t-mono">≈ 9"</text><text x="342" y="180" font-size="10.5" class="t-muted">出水口顶面以上</text>
+          <text x="20" y="130" font-size="11" class="t-muted">用户自备 1-1/2" Sch40 PVC</text>
+          <text x="20" y="530" font-size="11" class="t-muted">桶盖出水口 1-1/2" FNPT（不改）</text>
+          <text x="20" y="22" font-size="11" class="t-muted">阀组尺寸取自 PumpSpy CV-150 外形图；示意，非比例</text>
+        </svg>
+      </div>
+      <div class="box">
+        <h3>你的理解没错</h3>
+        <p class="note">上一版说的"盖面以上约 7"，指的就是这一段：短管加止回阀组件。按 PumpSpy 外形图重新算，应是约 9"，上一版估低了。</p>
+        <h3>竞品对这一段的要求</h3>
+        <ul>
+          <li><strong>Little Giant WRSC-6</strong>：活接和止回阀装在距盖顶 3" 以内。</li>
+          <li><strong>Liberty 404</strong>：活接紧贴泵出口上方，止回阀紧接活接、尽量靠近泵。</li>
+          <li><strong>Superior 92072</strong>：止回阀尽量靠近桶；现款随附的阀直接拧在盖口上。</li>
+          <li><strong>Zoeller 105</strong>：止回阀直接套在穿出盖面的出水管上。</li>
+        </ul>
+        <p class="note">共同点是止回阀要贴近盖面，没有一家给出最小长度。短管只需要够用：拧进盖口、留出拧卡箍的空间、插满接头。</p>
+        <h3>短管长度推算</h3>
+        <div class="tbl narrow" style="min-width:0"><table class="calc" style="min-width:0">
+          <tbody>
+            <tr><td>拧入盖口的螺纹长度（1-1/2" NPT 有效螺纹）</td><td>≈ 0.70"</td></tr>
+            <tr><td>盖口顶面到接头下沿的间隙（拧卡箍、避免接头压盖面）</td><td>≈ 0.50"</td></tr>
+            <tr><td>插入下橡胶接头的深度（(8-3/8" − 5-1/8") ÷ 2）</td><td>≈ 1.63"</td></tr>
+            <tr class="sum"><td>合计，取整</td><td>≈ 2.8" → 3"</td></tr>
+          </tbody>
+        </table></div>
+        <p class="note">建议短管总长 <strong>3"（76 mm）</strong>，允许 2-3/4" 至 3-1/4"。以厂家选定的阀和接头实测为准。</p>
+      </div>
+    </div>
+    <div class="warnbox">
+      <h3>需要厂家一起看的空间问题</h3>
+      <p class="note">出水口顶面以上约 9"，加上桶体约 14.4"，组件顶部离地约 23"。洗衣盆下（开放支架）没有问题；装在<strong>水槽柜内</strong>时可能顶到台盆底部。请厂家用样品实测总高，同时核对阀体（外径约 3"）是否碰到盖上相邻的排气口和线缆护套。</p>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>1.3 桶内出水管：方案 A（已定）与方案 B（备选）</h3>
+    <div class="tbl narrow"><table>
+      <thead><tr><th style="width:18%">对比项</th><th>方案 A：去掉内阀，改直管 + 防气堵孔 <span class="chip c-new">已定</span></th><th>方案 B：保持现款（含内阀）<span class="chip c-pick">备选</span></th></tr></thead>
+      <tbody>
+        <tr><td>桶内改动</td><td>出水管换同长度直管，开一个防气堵孔</td><td>零改动</td></tr>
+        <tr><td>止回阀数量</td><td>1 个（盖外），和 Little Giant、Liberty、Superior 的做法一致</td><td>2 个串联（桶内 + 盖外）</td></tr>
+        <tr><td>气堵风险</td><td>泵到止回阀之间的空气变多，靠防气堵孔排气，<strong>必须样机验证</strong></td><td>和现款一致（需厂家确认现款无气堵问题）</td></tr>
+        <tr><td>故障可见性</td><td>阀在盖外、透明，故障看得见、拆得下</td><td>内阀失效会被外阀掩盖</td></tr>
+        <tr><td>已知问题</td><td>消除内阀"开胶脱落""不止回"这类差评来源</td><td>保留这类风险，需厂家确认内阀粘接工艺已改善</td></tr>
+        <tr><td>成本</td><td>少一个阀，桶内件可能略降</td><td>多一个阀</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="two">
+      <div class="box fig" style="padding:12px">
+        <svg viewBox="0 0 380 330" role="img" aria-label="防气堵孔位置示意：开在桶内直管上部，高于启泵水位、低于盖底，孔朝桶壁，避开浮子；对照Zoeller、Boshart、Little Giant三种孔位">
+          <rect class="s-keep" x="20" y="30" width="240" height="14" rx="2"/>
+          <text x="26" y="24" font-size="11" class="t-muted">盖底</text>
+          <rect class="s-water" x="20" y="236" width="240" height="68"/>
+          <line class="s-waterline" x1="20" y1="236" x2="260" y2="236"/>
+          <text x="26" y="230" font-size="10.5" class="t-muted">启泵水位（示意）</text>
+          <rect class="s-keepdark" x="30" y="282" width="190" height="22" rx="3"/>
+          <text x="40" y="298" font-size="11" style="fill:var(--card)">泵出口</text>
+          <rect class="s-new" x="180" y="44" width="24" height="238"/>
+          <circle cx="204" cy="84" r="4" class="s-ink"/>
+          <path class="s-waterline" d="M209 84 q22 4 34 24"/>
+          <path class="s-waterline" d="M209 87 q18 9 26 26"/>
+          <line class="s-line" x1="100" y1="60" x2="100" y2="250"/>
+          <rect class="s-keep" x="92" y="214" width="16" height="26" rx="3"/>
+          <text x="60" y="58" font-size="11" class="t-muted">浮子开关</text>
+          <g font-size="11">
+            <line class="s-lead" x1="208" y1="80" x2="270" y2="64"/>
+            <text x="274" y="60" class="t-new">推荐区间</text>
+            <text x="274" y="74" class="t-muted">盖底以下 1–2"</text>
+            <text x="274" y="88" class="t-muted">高于启泵水位</text>
+            <circle cx="192" cy="72" r="2.2" style="fill:var(--muted)"/>
+            <line class="s-lead" x1="194" y1="72" x2="168" y2="72"/>
+            <text x="112" y="76" class="t-muted" text-anchor="end">Zoeller：管上部</text>
+            <circle cx="192" cy="200" r="2.2" style="fill:var(--muted)"/>
+            <line class="s-lead" x1="190" y1="200" x2="168" y2="200"/>
+            <text x="164" y="204" class="t-muted" text-anchor="end">Boshart：≈5"</text>
+            <circle cx="192" cy="250" r="2.2" style="fill:var(--muted)"/>
+            <line class="s-lead" x1="190" y1="250" x2="168" y2="250"/>
+            <text x="164" y="262" class="t-muted" text-anchor="end">Little Giant：≈2"</text>
+          </g>
+          <text x="20" y="322" font-size="11" class="t-muted">孔朝桶壁，避开浮子与电源线；Ø 3/16" ≈ 5 mm</text>
+        </svg>
+      </div>
+      <div class="box">
+        <h3>防气堵孔：各家要求不一，有共同底线</h3>
+        <div class="tbl narrow" style="min-width:0"><table style="min-width:0">
+          <thead><tr><th>来源</th><th>孔径</th><th>位置</th></tr></thead>
+          <tbody>
+            <tr><td>Zoeller 105</td><td>—</td><td>出水管上部；"不要朝向浮子"，运行时能看到水流喷出</td></tr>
+            <tr><td>Boshart（止回阀厂）</td><td>—</td><td>泵出口以上约 5"，且在止回阀以下</td></tr>
+            <tr><td>Little Giant WRSC-6</td><td>3/16"</td><td>出水管距接口约 2"</td></tr>
+            <tr><td>Red Lion、Zoeller 污水系统</td><td>3/16"（5 mm）</td><td>出水管预钻，未给高度</td></tr>
+          </tbody>
+        </table></div>
+        <ul>
+          <li><strong>共同底线</strong>：在泵出口和止回阀之间、在桶内、不朝浮子。</li>
+          <li><strong>建议开在直管上部</strong>（盖底以下 1–2"，高于启泵水位）。止回阀上移到盖外后，残留空气聚在管子最高处，孔越靠上，排气越彻底。Zoeller 的止回阀同样在盖外，孔也开在管上部，做法一致。这一条是按原理推断的，以样机测试为准。</li>
+          <li>孔径先按 3/16"（≈5 mm）打样；孔会带来少量回流，对流量影响很小。</li>
+          <li>说明书写明：定期检查防气堵孔是否堵塞（Superior 保养第 1 条）。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 二、颜色 ============ -->
+<section>
+  <div class="part"><span class="num">二</span><h2>桶身、桶盖换灰色</h2></div>
+  <div class="two">
+    <div class="box fig" style="padding:12px">
+      <svg viewBox="0 0 420 260" role="img" aria-label="配色对比：现款黑色桶身与新款灰色桶身配黑色外露功能件">
+        <g>
+          <path d="M40 92 L50 230 L170 230 L180 92 Z" style="fill:var(--basin-black);stroke:var(--keep);stroke-width:1"/>
+          <rect x="30" y="82" width="160" height="12" rx="2" style="fill:var(--basin-black);stroke:var(--keep);stroke-width:1"/>
+          <path d="M48 82 L58 64 L162 64 L172 82 Z" style="fill:var(--basin-black);stroke:var(--keep);stroke-width:1"/>
+          <rect x="118" y="54" width="16" height="10" style="fill:var(--basin-black);stroke:var(--keep);stroke-width:1"/>
+          <text x="110" y="252" font-size="12" text-anchor="middle" class="t-muted">现款：全黑</text>
+        </g>
+        <g>
+          <path d="M240 92 L250 230 L370 230 L380 92 Z" style="fill:var(--g2);stroke:var(--keep);stroke-width:1"/>
+          <rect x="230" y="82" width="160" height="12" rx="2" style="fill:var(--g2);stroke:var(--keep);stroke-width:1"/>
+          <path d="M248 82 L258 64 L362 64 L372 82 Z" style="fill:var(--g2);stroke:var(--keep);stroke-width:1"/>
+          <rect x="318" y="54" width="16" height="10" style="fill:var(--part-black)"/>
+          <rect x="320" y="40" width="12" height="16" style="fill:var(--part-black)"/>
+          <rect x="316" y="30" width="20" height="12" rx="2" style="fill:var(--part-black)"/>
+          <rect x="314" y="6" width="24" height="26" rx="4" style="fill:var(--card);stroke:var(--part-black);stroke-width:2"/>
+          <rect x="278" y="58" width="14" height="6" style="fill:var(--part-black)"/>
+          <path d="M285 58 C285 40 270 36 262 24" style="fill:none;stroke:var(--part-black);stroke-width:3"/>
+          <rect x="378" y="70" width="12" height="12" style="fill:var(--g2);stroke:var(--keep);stroke-width:1"/>
+          <text x="310" y="252" font-size="12" text-anchor="middle">新款：灰色桶身 + 黑色功能件</text>
+        </g>
+      </svg>
+    </div>
+    <div class="box">
+      <h3>要求</h3>
+      <ul>
+        <li><strong>原模具，只换色母</strong>，桶身和桶盖同色。</li>
+        <li><strong>同批色母</strong>：桶身、桶盖用同一批色母生产，约定色差标准（例如 ΔE ≤ 1.5），确认色板后封样。</li>
+        <li><strong>表面</strong>：哑光，桶身和桶盖的纹理光泽一致。不选很浅的灰白，地下室环境容易显脏。</li>
+        <li><strong>外露功能件统一黑色</strong>：电源线、线缆护套、短管、橡胶接头、止回阀两端件。泵仍为黑色，装在桶内基本看不到。</li>
+        <li>色号由我方提供，以实物色卡为准。</li>
+      </ul>
+      <h3>需厂家回复</h3>
+      <ul>
+        <li>换色起订量、单价差、打样周期</li>
+        <li>换色是否影响材料性能和认证档案</li>
+        <li>能否先出 2–3 个灰色的色板或小样</li>
+      </ul>
+    </div>
+  </div>
+  <div class="swatches">
+    <div class="swatch"><div class="chipc" style="background:var(--g1)"></div><div class="lab"><strong>浅灰</strong><span class="mono note">参考 RAL 7035</span><span class="note">偏亮，最接近家电感，显脏风险最高</span></div></div>
+    <div class="swatch"><div class="chipc" style="background:var(--g2)"></div><div class="lab"><strong>中灰</strong><span class="mono note">参考 RAL 7040</span><span class="note">耐脏，与黑色功能件对比清楚</span></div></div>
+    <div class="swatch"><div class="chipc" style="background:var(--g3)"></div><div class="lab"><strong>暖灰</strong><span class="mono note">参考 RAL 7044</span><span class="note">偏暖，观感柔和</span></div></div>
+  </div>
+  <p class="note">色块为屏幕近似色，只用于讨论方向，打样以实物色卡为准。</p>
+</section>
+
+<!-- ============ 三、预装 ============ -->
+<section>
+  <div class="part"><span class="num">三</span><h2>出厂预装与水测（重点沟通）</h2></div>
+  <p>预装在行业里很常见：Zoeller 105 卖点卡写"Preassembled kit"和"100% factory tested"，Superior 92072 说明书写"pre-assembled in the basin"。现款需要用户开盖装泵、浮子和出水管。考虑到这一项可能不好落地，分三档和厂家谈，先摸清每档的可行性和成本。</p>
+  <div class="tbl"><table>
+    <thead><tr><th style="width:10%">档位</th><th style="width:28%">厂内完成</th><th style="width:22%">水测</th><th>主要难点</th><th style="width:18%">对外可用表述</th></tr></thead>
+    <tbody>
+      <tr><td><strong>档 1</strong><br><span class="chip c-new">目标</span></td><td>泵、浮子、桶内出水管装进桶，线缆过护套，盖子锁好螺栓；盖外组件散件装箱</td><td>每台通水测试：自动启停、外漏</td><td>水测后的排水与干燥（防止箱内积水发霉）；工时；运输中泵和管是否松动</td><td>Factory-assembled & 100% tested</td></tr>
+      <tr><td><strong>档 2</strong><br><span class="chip c-pick">退一步</span></td><td>同档 1 装配</td><td>按批次抽检通水</td><td>同档 1，但水测工时和干燥问题大幅减少</td><td>Factory-assembled（不写 100% tested）</td></tr>
+      <tr><td><strong>档 3</strong><br><span class="chip c-keep">保底</span></td><td>维持现款散件；泵和出水管可先在厂内拧好</td><td>出货抽检</td><td>无新增难点</td><td>不宣称预装</td></tr>
+    </tbody>
+  </table></div>
+  <div class="box">
+    <h3>请厂家逐档回复</h3>
+    <ul>
+      <li>是否愿意做、每台工时和成本差</li>
+      <li>水测后的排水、干燥方式，以及包装方案（箱体尺寸是否变化）</li>
+      <li>预装后的运输防护：泵、浮子、出水管怎么固定</li>
+      <li>方案 A 的直管和防气堵孔，是否顺带在水测时验证启停</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 四、清单 ============ -->
+<section>
+  <div class="part"><span class="num">四</span><h2>改动项清单</h2></div>
+  <div class="tbl"><table>
+    <thead><tr><th style="width:44px">编号</th><th style="width:14%">项目</th><th style="width:10%">类型</th><th style="width:25%">要求</th><th style="width:27%">注意事项</th><th>需厂家回复</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="no">01</td><td>单端螺纹短管</td><td><span class="chip c-new">新增随箱</span></td>
+        <td><ul><li>一端 1-1/2" MNPT 外螺纹，一端光管</li><li>光管外径 1.900"（48.3 mm），同 Sch40</li><li>PVC 或 ABS，黑色</li><li><strong>总长 3"（76 mm）</strong>，允许 2-3/4"–3-1/4"</li></ul></td>
+        <td><ul><li>手拧到位即可，塑料螺纹拧太紧会开裂</li><li>光管端倒角，避免割伤橡胶接头</li><li>止回阀要贴近盖面，短管不宜加长</li></ul></td>
+        <td><ul><li>确认盖子出水口螺纹：1-1/2" NPT，11.5 牙/英寸，有效螺纹深度</li><li>能否提供，单价</li><li>与盖子出水口的试装结果</li></ul></td>
+      </tr>
+      <tr>
+        <td class="no">02</td><td>静音透明止回阀组件</td><td><span class="chip c-new">新增随箱</span></td>
+        <td><ul><li>由水泵厂代采，我方推荐参照 PumpSpy CV-150</li><li>1-1/2"，slip × slip，适配 Sch40</li><li>弹簧辅助缓闭（静音），透明阀体，标流向箭头</li><li>2 个橡胶接头 + 4 个不锈钢卡箍</li><li>参照尺寸：总长 8-3/8"，管端间隙 5-1/8"，阀体外径 3"</li></ul></td>
+        <td><ul><li><strong>阀体工艺</strong>：优先超声波焊接或一体成型；PumpSpy 耐久差评集中在胶粘接缝</li><li><strong>承压</strong>：泵关死扬程 25 ft ≈ 10.8 psi；Zoeller 同类橡胶接头额定仅 4.3 psi（阀以上静水头 10 ft）。请厂家确认阀体和接头的额定值，我方评估影响</li><li><strong>耐温</strong>：建议 ≥ 130°F</li><li>总高和周边干涉见 1.2</li></ul></td>
+        <td><ul><li>可采购的型号和单价</li><li>阀体、接头的额定压力和耐温</li><li>阀体工艺说明</li><li>样品</li></ul></td>
+      </tr>
+      <tr>
+        <td class="no">03</td><td>生料带</td><td><span class="chip c-new">新增随箱</span></td>
+        <td>每箱 1 卷 PTFE 生料带</td>
+        <td><ul><li>说明书写明：塑料螺纹用生料带，不用普通管螺纹密封剂</li></ul></td>
+        <td>单价</td>
+      </tr>
+      <tr>
+        <td class="no">04</td><td>桶内出水管</td><td><span class="chip c-new">方案 A</span></td>
+        <td><ul><li>去掉内置止回阀，换同长度直管</li><li>直管上部开防气堵孔：盖底以下 1–2"、高于启泵水位，Ø 3/16"（≈5 mm），朝桶壁</li><li>方案 B（保持现款）作备选</li></ul></td>
+        <td><ul><li>直管与泵出口、盖子出水口的连接方式同现款</li><li>孔不能朝向浮子和电源线</li><li>孔位、孔径以样机测试为准</li></ul></td>
+        <td><ul><li>直管成本差</li><li>可否做 2–3 台样机</li><li>备选 B：现款是否有防气堵设计、内阀工艺是否改善</li></ul></td>
+      </tr>
+      <tr class="hl">
+        <td class="no">05</td><td>桶身、桶盖颜色</td><td><span class="chip c-core">核心</span></td>
+        <td>原模具换灰色色母，哑光；外露功能件统一黑色。详见第二节</td>
+        <td><ul><li>同批色母、色差标准、封样</li><li>不选很浅的灰白</li></ul></td>
+        <td><ul><li>起订量、单价差、打样周期</li><li>是否影响材料和认证档案</li><li>2–3 个色板</li></ul></td>
+      </tr>
+      <tr class="hl">
+        <td class="no">06</td><td>出厂预装与水测</td><td><span class="chip c-pick">重点沟通</span></td>
+        <td>按三档谈：档 1 预装 + 100% 水测；档 2 预装 + 抽检；档 3 维持散件。详见第三节</td>
+        <td><ul><li>水测后排水干燥、运输防护</li><li>做不到全检时，不宣称 100% tested</li></ul></td>
+        <td>逐档回复意愿、工时、成本差、包装方案</td>
+      </tr>
+      <tr>
+        <td class="no">07</td><td>盖子密封</td><td><span class="chip c-ok">确认项</span></td>
+        <td>请厂家说明现款的改进情况</td>
+        <td><ul><li>八角桶的公开差评集中在盖子四角渗漏（VEVOR、Superior 都有）</li></ul></td>
+        <td>现款已做的改进（密封圈、螺栓、扭矩）和验证数据</td>
+      </tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="part"><span class="num">五</span><h2>样品与验证</h2></div>
+  <div class="grid2">
+    <div class="box">
+      <h3>请厂家提供</h3>
+      <ul>
+        <li>现款 BOM，以及出水口、进水口、排气口的螺纹规格（进水口、排气口不改，说明书按 1-1/2" NPT 标注）</li>
+        <li>泵性能曲线、浮子启停水位</li>
+        <li>各项单价差、起订量、打样周期、量产交期</li>
+        <li>样机：方案 A 2–3 台、方案 B 1 台，各配盖外出水组件</li>
+        <li>灰色色板 2–3 个，确认后出灰色桶身桶盖 1–2 套</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>样机测试（我方或第三方）</h3>
+      <ul>
+        <li>首次启动与反复启停：是否气堵（方案 A 重点）</li>
+        <li>防气堵孔：喷水方向、是否影响浮子</li>
+        <li>停泵回流：外阀是否止回</li>
+        <li>承压：最大提升高度下橡胶接头是否渗漏、脱出</li>
+        <li>噪音：新外阀与现款内阀停泵声音对比</li>
+        <li>总高与干涉：出水口以上实测高度，是否碰到排气口、线缆护套</li>
+        <li>运输后复测：短管、接头是否松动</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">测试结果出来前，静音、承压、预装水测等卖点都不写进 listing。</p>
+</section>
+
+<section class="src">
+  <h3>依据</h3>
+  <ol>
+    <li>VEVOR ZX30023/ZX30024 说明书：三个口均为 1-1/2" NPT，进水、出水、排气管由用户自备，内置止回阀装在桶内出水管上。</li>
+    <li>Little Giant WRSC-6 说明书：活接和止回阀装在距盖顶 3" 以内；有止回阀时在出水管距接口约 2" 处开 3/16" 孔防气堵。</li>
+    <li>Liberty 404/405 说明书：活接装在泵上方，止回阀紧接活接、尽量靠近泵。</li>
+    <li>Zoeller 105 安装说明 Figure 2.1：出水管上部开 weep hole，不得朝向浮子，运行时可见水流。Zoeller 画册 FM0532：Unicheck 30-0181 橡胶接头额定 4.3 psi、阀以上静水头不超过 10 ft；污水系统预钻 3/16"（5 mm）排气孔。</li>
+    <li>Superior 92072 说明书：在线止回阀尽量靠近桶，带橡胶套可降噪减振；保养首条为清理防气堵孔；塑料螺纹用生料带；pump is pre-assembled in the basin。</li>
+    <li>Red Lion WCS50 装配说明：出水管预钻 3/16" 防气堵孔。</li>
+    <li><a href="https://support.boshart.com/what-is-a-sump-pump-weep-hole">Boshart：What is a sump pump weep hole</a>：孔位约在泵出口以上 5"、止回阀以下。</li>
+    <li>PumpSpy CV-150 外形图与 <a href="https://www.amazon.com/dp/B091V15RHZ">Amazon 页面</a>：总长 8-3/8"，管端间隙 5-1/8"，阀体外径 3"；弹簧缓闭、透明阀体，Buna-N 橡胶接头配不锈钢卡箍；耐久差评集中在胶粘接缝。</li>
+    <li>Zoeller 105 卖点卡：Preassembled kit，100% factory tested。</li>
+  </ol>
+</section>
+
+</div>
+
+</body>
+</html>
